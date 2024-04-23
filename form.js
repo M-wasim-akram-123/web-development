@@ -5,7 +5,8 @@ let students = [] //Array multiple item ko save kar skty hn ;
 // students.push("samreen");
 // students.push("amina");
 // students.push("noor");
-
+//document.getElementById("update").style.display = 'none';
+let currentIndex;
 console.log(students);
 console.log("length",students.length)
 console.log("last index",students.length - 1);
@@ -38,7 +39,7 @@ function submitForm() {
     };
     let userObj = newLocal;
     console.log(userObj);
-    students.puhs(userObj);
+    students.push(userObj);
     console.log(students);
 
     // Log values to the console
@@ -115,6 +116,7 @@ function createTable(){
 }
 
 function testBtn(index){
+    currentIndex = index;
     console.log("Yes button is working.......",index)
     let formData = students[index];
     console.log(formData);
@@ -125,13 +127,99 @@ function testBtn(index){
     document.getElementById("class").value = formData.userclass;
     document.getElementById("email").value = formData.email;
     document.getElementById("chckBox").checked = formData.chckBox;
+    document.getElementById("update").style.display = 'block'
+    document.getElementById("submit").style.display = 'none'
+
 }
 function deleteRow(button){
     var row = button.parentNode.parentNode;
     // Remove the row from the table
     row.parentNode.removeChild(row);
 }
+function updateForm(){
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    let userclass = document.getElementById("class").value;
+    let email = document.getElementById("email").value;
+    let chckBox = document.getElementById("chckBox").checked;
+    const newLocal = {
+        username: username,
+        password: password,
+        userclass: userclass,
+        email: email,
+        checked: chckBox
+    };
+    students[currentIndex] =  newLocal;
+    console.log(students)
+}
 //for html ref
 //onclick="testBtn()"
 
 
+//control structure
+
+let num = 9 ;
+
+let num3 = 8 ;
+console.log(num > num3);
+if(5 == '5'){
+    console.log("Condition is true")
+}else{
+    console.log("Condition is false")
+}
+
+let requiredMarks = 780;
+let obtainedMarks = 768;
+
+if(!7 > 6){
+    console.log("2nd Condition is true")
+}else{
+    console.log("2nd condition is false")
+}
+
+if(obtainedMarks >= requiredMarks){
+    console.log("Scholorship is 70per")
+}else if(obtainedMarks >=700 && obtainedMarks < requiredMarks){   
+    console.log("Scholorship is 60per")
+
+}else{
+    console.log("Scholorship is 20per")
+}
+
+let num4 = 4;
+
+if(num4){
+    console.log("yes num4 is initialized")
+}else{
+    console.log("Num4 is undefined")
+}
+
+let arr = ["areeba","samreen","noor","sidra"];// string , numbers, boolean ,objects 
+let ar1 = [{name:"arreba"},{name:"sidra"},{name:"noor"}]
+console.log(arr[6]);
+
+if(arr[6]){
+    console.log("ITEM ON INDEX IS ",arr[6])
+}else{
+    console.log("Sorry index not found")
+}
+
+for(let a of arr){
+    console.log(a);
+}
+for(let a of ar1){
+    console.log("item of array",a);
+}
+for(let i = 0 ; i < 5 ; i++){
+    console.log("Value of i is ==> ",i)
+    if(i == 4){
+        console.log("Yes now value is 4")
+        for(let j = 0 ; j < i;j++){
+            console.log("value of j is ==>",j)
+        }
+    }
+}
+
+for(let i = 0; i < arr.length; i++){
+    console.log(arr[i])
+}
