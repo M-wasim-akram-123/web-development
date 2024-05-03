@@ -20,6 +20,7 @@ let obj = {
     resultReport:{year:2020,total:300,obtained:233,status:"Pass"}
 
 }; // key:value ka pair ata h 
+
 function submitForm() {
     // Get the form element
     var form = document.getElementById("myForm");
