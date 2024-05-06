@@ -1,5 +1,5 @@
 const { MongoClient } = require('mongodb');
-const uri = 'mongodb://127.0.0.1:27017'; // or your MongoDB URI
+const uri = 'mongodb://127.0.0.1:27017/testDb'; // or your MongoDB URI
 
 const client = new MongoClient(uri, { useNewUrlParser: true});
 
